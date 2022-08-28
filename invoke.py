@@ -33,6 +33,10 @@ def invoke_OMP(audio, params):
         raise ValueError('Recorte analógico no especificado.')
     if 'fejer_threshold' not in params:
         raise ValueError('Umbral de recorte brindado por promediado de Fejer no especificado.')
+    if 'epsilon' not in params:
+        raise ValueError('Error tolerable (\'epsilon\') no especificado.')
+    if 'K_omp' not in params:
+        raise ValueError('Máximo nivel de escasez (\'K omp\') no especificado.')
     if 'skip_clean_frames' not in params:
         raise ValueError('Booleano indicador de restauración en segmentos no distorsionados no especificado.')
     if 'verbose' not in params:
@@ -46,6 +50,8 @@ def invoke_OMP(audio, params):
     analog_clipping = params['analog_clipping']
     verbose = params['verbose']
     fejer_threshold = params['fejer_threshold']
+    epsilon = params['epsilon']
+    K_omp = params['K_omp']
 
     # An iterator object is obtained from the frame's length
     N_support = np.arange(N)
@@ -58,6 +64,8 @@ def invoke_OMP(audio, params):
     if analog_clipping:
         # If the context is analog clipping, Fejer averaging is employed to estimate the clipping threshold    
         CLIP_LEVEL = fejer_threshold
+        # Since the saturation does not have constant amplitude, the input audio signal is hardclipped.
+        audio = hardclip(audio, CLIP_LEVEL)[0]
     else:
         # If the context is digital clipping, the clipping level is obtained from considering the infinity norm (defined by the maximum amplitude level) of the audio vector. 
         CLIP_LEVEL = np.max(audio)
@@ -143,25 +151,18 @@ def invoke_OMP(audio, params):
                 continue
             if verbose > 0: print(f'Frame {i}/{frames-1}')
 
-            if analog_clipping:
-                I_mp, I_mn = np.where(y >= CLIP_LEVEL)[0], np.where(y <= - CLIP_LEVEL)[0]
-            else:
-                I_mp, I_mn = np.where(y == CLIP_LEVEL)[0], np.where(y == - CLIP_LEVEL)[0]
+            # if analog_clipping:
+            #     I_mp, I_mn = np.where(y >= CLIP_LEVEL)[0], np.where(y <= - CLIP_LEVEL)[0]
+            # else:
+            I_mp, I_mn = np.where(y == CLIP_LEVEL)[0], np.where(y == - CLIP_LEVEL)[0]
             
             # Measurement matrices are built upon the support vectors also.
             M_r = M[I_r]
             M_mp = M[I_mp]
             M_mn = M[I_mn]
 
-            # The error threshold will be set to 1e-6. 
-            epsilon = 1e-6
-
             # Further, we multiply this value for the amount of elements in the reliable samples support vector.
             epsilon_omp = epsilon * I_r.size
-
-            # The maximum sparsity level is defined. 
-            # Floor division is used to keep the result as an integer and make comparison operators work more efficiently.
-            K_omp = N // 4
 
             # # The OMP algorithm is called.
             x_k = OMP(y_r, M_r, M_mp, M_mn, D, K_omp, epsilon_omp, CLIP_LEVEL, constrained, verbose == 2)
