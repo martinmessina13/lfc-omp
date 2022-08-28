@@ -1,0 +1,164 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Starting C-OMP - filename: a42_accordion.wav\
+the clipping threshold is 0.0829, the true SDR is 15.0dB and 7.969% of the signal samples are clipped.\
+\
+C-OMP took 2211.24s to complete the restoration.\
+SDRc of the clipped signal: 11.389 dB.\
+SDRc of the restored signal: 19.456 dB.\
+SDRc improvement is 8.067 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 21.478 dB.\
+SDR improvement is 6.478 dB.\
+\
+\
+Starting C-OMP - filename: a41_celesta.wav\
+the clipping threshold is 0.2391, the true SDR is 15.0dB and 6.153% of the signal samples are clipped.\
+\
+C-OMP took 512.86s to complete the restoration.\
+SDRc of the clipped signal: 10.848 dB.\
+SDRc of the restored signal: 25.593 dB.\
+SDRc improvement is 14.745 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 26.151 dB.\
+SDR improvement is 11.151 dB.\
+\
+\
+Starting C-OMP - filename: a16_clarinet.wav\
+the clipping threshold is 0.2112, the true SDR is 15.0dB and 12.492% of the signal samples are clipped.\
+\
+C-OMP took 1013.09s to complete the restoration.\
+SDRc of the clipped signal: 11.942 dB.\
+SDRc of the restored signal: 13.015 dB.\
+SDRc improvement is 1.073 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 8.113 dB.\
+SDR improvement is -6.887 dB.\
+\
+\
+Starting C-OMP - filename: a25_harp.wav\
+the clipping threshold is 0.2287, the true SDR is 15.0dB and 4.618% of the signal samples are clipped.\
+\
+C-OMP took 288.26s to complete the restoration.\
+SDRc of the clipped signal: 10.719 dB.\
+SDRc of the restored signal: 20.257 dB.\
+SDRc improvement is 9.538 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 24.425 dB.\
+SDR improvement is 9.425 dB.\
+\
+\
+Starting C-OMP - filename: a18_bassoon.wav\
+the clipping threshold is 0.2355, the true SDR is 15.0dB and 7.249% of the signal samples are clipped.\
+\
+C-OMP took 757.31s to complete the restoration.\
+SDRc of the clipped signal: 11.445 dB.\
+SDRc of the restored signal: 20.913 dB.\
+SDRc improvement is 9.468 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 24.294 dB.\
+SDR improvement is 9.294 dB.\
+\
+/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py:88: UserWarning: PySoundFile failed. Trying audioread instead.\
+  return f(*args, **kwargs)\
+Traceback (most recent call last):\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 155, in load\
+    context = sf.SoundFile(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 629, in __init__\
+    self._file = self._open(file, mode_int, closefd)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1183, in _open\
+    _error_check(_snd.sf_error(file_ptr),\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1357, in _error_check\
+    raise RuntimeError(prefix + _ffi.string(err_str).decode('utf-8', 'replace'))\
+RuntimeError: Error opening './sounds/analog/ancl_15dB_a35_glockenspiel.wav': System error.\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/martin/Desktop/omp/tests/declippinganalog copy 5.py", line 49, in <module>\
+    [clipped, fs] = librosa.load(f'\{param["path"]\}/analog/ancl_\{param["desiredSDR"]\}dB_\{file\}', sr=None)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py", line 88, in inner_f\
+    return f(*args, **kwargs)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 174, in load\
+    y, sr_native = __audioread_load(path, offset, duration, dtype)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 198, in __audioread_load\
+    with audioread.audio_open(path) as input_file:\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/__init__.py", line 111, in audio_open\
+    return BackendClass(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/rawread.py", line 62, in __init__\
+    self._fh = open(filename, 'rb')\
+FileNotFoundError: [Errno 2] No such file or directory: './sounds/analog/ancl_15dB_a35_glockenspiel.wav'\
+\
+Starting C-OMP - filename: a08_violin.wav\
+the clipping threshold is 0.1664, the true SDR is 15.0dB and 7.192% of the signal samples are clipped.\
+\
+C-OMP took 3263.72s to complete the restoration.\
+SDRc of the clipped signal: 11.547 dB.\
+SDRc of the restored signal: 18.254 dB.\
+SDRc improvement is 6.707 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 21.608 dB.\
+SDR improvement is 6.608 dB.\
+\
+\
+Starting C-OMP - filename: a66_wind_ensemble_stravinsky.wav\
+the clipping threshold is 0.1659, the true SDR is 15.0dB and 4.755% of the signal samples are clipped.\
+\
+C-OMP took 14071.77s to complete the restoration.\
+SDRc of the clipped signal: 10.645 dB.\
+SDRc of the restored signal: 15.952 dB.\
+SDRc improvement is 5.307 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 20.072 dB.\
+SDR improvement is 5.072 dB.\
+\
+\
+Starting C-OMP - filename: music02_16kHz.wav\
+the clipping threshold is 0.4194, the true SDR is 15.0dB and 2.155% of the signal samples are clipped.\
+\
+C-OMP took 239.89s to complete the restoration.\
+SDRc of the clipped signal: 10.107 dB.\
+SDRc of the restored signal: 17.197 dB.\
+SDRc improvement is 7.09 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 21.941 dB.\
+SDR improvement is 6.941 dB.\
+\
+\
+Starting C-OMP - filename: a60_piano_schubert.wav\
+the clipping threshold is 0.1327, the true SDR is 15.0dB and 5.715% of the signal samples are clipped.\
+\
+C-OMP took 1237.32s to complete the restoration.\
+SDRc of the clipped signal: 10.909 dB.\
+SDRc of the restored signal: 14.693 dB.\
+SDRc improvement is 3.784 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 18.276 dB.\
+SDR improvement is 3.276 dB.\
+\
+\
+Starting C-OMP - filename: a58_guitar_sarasate.wav\
+the clipping threshold is 0.0851, the true SDR is 15.0dB and 4.506% of the signal samples are clipped.\
+\
+C-OMP took 2382.1s to complete the restoration.\
+SDRc of the clipped signal: 10.31 dB.\
+SDRc of the restored signal: 13.078 dB.\
+SDRc improvement is 2.768 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 16.667 dB.\
+SDR improvement is 1.667 dB.}

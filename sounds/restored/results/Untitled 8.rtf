@@ -1,0 +1,236 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww13440\viewh12340\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Starting LFC-OMP - filename: a42_accordion.wav\
+the clipping threshold is 0.08139999955892563, the true SDR is 15.0dB and 8.44% of the signal samples are clipped.\
+\
+LFC-OMP took 2266.24s to complete the restoration.\
+SDRc of the clipped signal: 12.674 dB.\
+SDRc of the restored signal: 13.692 dB.\
+SDRc improvement is 1.018 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 15.739 dB.\
+SDR improvement is 0.739 dB.\
+\
+/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py:88: UserWarning: PySoundFile failed. Trying audioread instead.\
+  return f(*args, **kwargs)\
+Traceback (most recent call last):\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 155, in load\
+    context = sf.SoundFile(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 629, in __init__\
+    self._file = self._open(file, mode_int, closefd)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1183, in _open\
+    _error_check(_snd.sf_error(file_ptr),\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1357, in _error_check\
+    raise RuntimeError(prefix + _ffi.string(err_str).decode('utf-8', 'replace'))\
+RuntimeError: Error opening './tests/sounds/a41_celesta.wav': System error.\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/martin/Desktop/omp/tests/declippinganalog copy 1.py", line 48, in <module>\
+    [audio, fs] = librosa.load(f'\{param["path"]\}/\{file\}', sr = None)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py", line 88, in inner_f\
+    return f(*args, **kwargs)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 174, in load\
+    y, sr_native = __audioread_load(path, offset, duration, dtype)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 198, in __audioread_load\
+    with audioread.audio_open(path) as input_file:\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/__init__.py", line 111, in audio_open\
+    return BackendClass(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/rawread.py", line 62, in __init__\
+    self._fh = open(filename, 'rb')\
+FileNotFoundError: [Errno 2] No such file or directory: './tests/sounds/a41_celesta.wav'\
+\
+Starting LFC-OMP - filename: a16_clarinet.wav\
+the clipping threshold is 0.20029999315738678, the true SDR is 15.0dB and 14.928% of the signal samples are clipped.\
+\
+LFC-OMP took 987.64s to complete the restoration.\
+SDRc of the clipped signal: 12.986 dB.\
+SDRc of the restored signal: 8.807 dB.\
+SDRc improvement is -4.179 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 11.172 dB.\
+SDR improvement is -3.828 dB.\
+\
+\
+Starting LFC-OMP - filename: a25_harp.wav\
+the clipping threshold is 0.210099995136261, the true SDR is 15.0dB and 5.98% of the signal samples are clipped.\
+\
+LFC-OMP took 296.56s to complete the restoration.\
+SDRc of the clipped signal: 11.409 dB.\
+SDRc of the restored signal: 13.736 dB.\
+SDRc improvement is 2.327 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 17.288 dB.\
+SDR improvement is 2.288 dB.\
+\
+\
+Starting LFC-OMP - filename: a18_bassoon.wav\
+the clipping threshold is 0.21799999475479126, the true SDR is 15.0dB and 8.93% of the signal samples are clipped.\
+\
+LFC-OMP took 821.98s to complete the restoration.\
+SDRc of the clipped signal: 12.156 dB.\
+SDRc of the restored signal: 16.893 dB.\
+SDRc improvement is 4.737 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 19.391 dB.\
+SDR improvement is 4.391 dB.\
+\
+/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py:88: UserWarning: PySoundFile failed. Trying audioread instead.\
+  return f(*args, **kwargs)\
+Traceback (most recent call last):\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 155, in load\
+    context = sf.SoundFile(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 629, in __init__\
+    self._file = self._open(file, mode_int, closefd)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1183, in _open\
+    _error_check(_snd.sf_error(file_ptr),\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1357, in _error_check\
+    raise RuntimeError(prefix + _ffi.string(err_str).decode('utf-8', 'replace'))\
+RuntimeError: Error opening './sounds/analog/ancl_15dB_a35_glockenspiel.wav': System error.\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/martin/Desktop/omp/tests/declippinganalog copy 5.py", line 49, in <module>\
+    [clipped, fs] = librosa.load(f'\{param["path"]\}/analog/ancl_\{param["desiredSDR"]\}dB_\{file\}', sr=None)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py", line 88, in inner_f\
+    return f(*args, **kwargs)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 174, in load\
+    y, sr_native = __audioread_load(path, offset, duration, dtype)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 198, in __audioread_load\
+    with audioread.audio_open(path) as input_file:\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/__init__.py", line 111, in audio_open\
+    return BackendClass(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/audioread/rawread.py", line 62, in __init__\
+    self._fh = open(filename, 'rb')\
+FileNotFoundError: [Errno 2] No such file or directory: './sounds/analog/ancl_15dB_a35_glockenspiel.wav'\
+\
+Starting LFC-OMP - filename: a08_violin.wav\
+the clipping threshold is 0.16859999299049377, the true SDR is 15.0dB and 6.78% of the signal samples are clipped.\
+\
+LFC-OMP took 3024.32s to complete the restoration.\
+SDRc of the clipped signal: 12.798 dB.\
+SDRc of the restored signal: 16.522 dB.\
+SDRc improvement is 3.724 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 17.308 dB.\
+SDR improvement is 2.308 dB.\
+\
+\
+Starting LFC-OMP - filename: a66_wind_ensemble_stravinsky.wav\
+the clipping threshold is 0.508899986743927, the true SDR is 23.772dB and 0.001% of the signal samples are clipped.\
+\
+LFC-OMP took 408.56s to complete the restoration.\
+SDRc of the clipped signal: 39.918 dB.\
+SDRc of the restored signal: 38.24 dB.\
+SDRc improvement is -1.678 dB.\
+\
+SDR of the clipped signal: 23.772 dB.\
+SDR of the restored signal: 23.765 dB.\
+SDR improvement is -0.007 dB.\
+\
+\
+Starting LFC-OMP - filename: music02_16kHz.wav\
+the clipping threshold is 0.9993000030517578, the true SDR is 34.678dB and 0.0% of the signal samples are clipped.\
+\
+/Users/martin/Desktop/omp/tests/helpers.py:89: RuntimeWarning: invalid value encountered in true_divide\
+  return np.round(20 * np.log10(np.linalg.norm(x) / np.linalg.norm(x - x_hat)), 3)\
+/Users/martin/Desktop/omp/tests/helpers.py:89: RuntimeWarning: invalid value encountered in float_scalars\
+  return np.round(20 * np.log10(np.linalg.norm(x) / np.linalg.norm(x - x_hat)), 3)\
+LFC-OMP took 46.54s to complete the restoration.\
+SDRc of the clipped signal: nan dB.\
+SDRc of the restored signal: nan dB.\
+SDRc improvement is nan dB.\
+\
+SDR of the clipped signal: 34.678 dB.\
+SDR of the restored signal: 34.669 dB.\
+SDR improvement is -0.009 dB.\
+\
+\
+Starting LFC-OMP - filename: a60_piano_schubert.wav\
+the clipping threshold is 0.12359999865293503, the true SDR is 15.001dB and 7.233% of the signal samples are clipped.\
+\
+ cd /Users/martin/Desktop/omp ; /usr/bin/env /opt/homebrew/Caskroom/miniforge/base/envs/.thesis/bin/python /Users/martin/.vscode/extensions/ms-python.python-2022.8.0/pythonFiles/lib/python/debugpy/launcher 50916 -- /Users/martin/Desktop/omp/tests/analog_sample_preparation.py \
+^CTraceback (most recent call last):\
+  File "/Users/martin/Desktop/omp/tests/declippinganalog copy 9.py", line 80, in <module>\
+    y = invoke_OMP(file=file, audio=clipped, fs=fs, N=N, dictionary=dictionary, mode=mode, skip_clean_frames=skip_clean_frames, analog_clipping=analog_clipping, verbose=verbose)\
+  File "/Users/martin/Desktop/omp/tests/invoke.py", line 145, in invoke_OMP\
+    x_k = OMP_G(y_r, I_r, M_r, M_mp, M_mn, D, K_omp, epsilon_omp, CLIP_LEVEL, mode=mode, verbose=verbose)\
+  File "/Users/martin/Desktop/omp/tests/omp.py", line 202, in OMP_G\
+    result = np.linalg.norm(r - D_c_ * x_c_ - D_s_ * x_s_, axis=0) ** 2\
+KeyboardInterrupt\
+\
+(.thesis) martin@martins-MacBook-Pro tests % bash analog_declip_main.sh\
+/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py:88: UserWarning: PySoundFile failed. Trying audioread instead.\
+  return f(*args, **kwargs)\
+Traceback (most recent call last):\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 155, in load\
+    context = sf.SoundFile(path)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 629, in __init__\
+    self._file = self._open(file, mode_int, closefd)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1183, in _open\
+    _error_check(_snd.sf_error(file_ptr),\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/soundfile.py", line 1357, in _error_check\
+    raise RuntimeError(prefix + _ffi.string(err_str).decode('utf-8', 'replace'))\
+RuntimeError: Error opening './tests/sounds/a41_celesta.wav': System error.\
+\
+During handling of the above exception, another exception occurred:\
+\
+Traceback (most recent call last):\
+  File "/Users/martin/Desktop/omp/tests/declippinganalog copy 1.py", line 48, in <module>\
+    [audio, fs] = librosa.load(f'\{param["path"]\}/\{file\}', sr = None)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/util/decorators.py", line 88, in inner_f\
+    return f(*args, **kwargs)\
+  File "/opt/homebrew/Caskroom/miniforge/base/envs/.thesis/lib/python3.9/site-packages/librosa/core/audio.py", line 174, in load\
+    y, sr_native = __audioread_load(path, offset, duration, dtype)\
+(.thesis) martin@martins-MacBook-Pro tests % bash analog_declip_main.sh\
+\
+Starting LFC-OMP - filename: a41_celesta.wav\
+the clipping threshold is 0.22439999878406525, the true SDR is 15.0dB and 7.664% of the signal samples are clipped.\
+\
+LFC-OMP took 767.52s to complete the restoration.\
+SDRc of the clipped signal: 11.758 dB.\
+SDRc of the restored signal: 17.973 dB.\
+SDRc improvement is 6.215 dB.\
+\
+SDR of the clipped signal: 15.0 dB.\
+SDR of the restored signal: 20.234 dB.\
+SDR improvement is 5.234 dB.\
+\
+\
+Starting LFC-OMP - filename: a60_piano_schubert.wav\
+the clipping threshold is 0.12359999865293503, the true SDR is 15.001dB and 7.233% of the signal samples are clipped.\
+\
+LFC-OMP took 2133.7s to complete the restoration.\
+SDRc of the clipped signal: 11.714 dB.\
+SDRc of the restored signal: 9.049 dB.\
+SDRc improvement is -2.665 dB.\
+\
+SDR of the clipped signal: 15.001 dB.\
+SDR of the restored signal: 12.427 dB.\
+SDR improvement is -2.574 dB.\
+\
+\
+Starting LFC-OMP - filename: a58_guitar_sarasate.wav\
+the clipping threshold is 0.07980000227689743, the true SDR is 14.999dB and 5.71% of the signal samples are clipped.\
+\
+LFC-OMP took 3174.65s to complete the restoration.\
+SDRc of the clipped signal: 11.088 dB.\
+SDRc of the restored signal: 5.076 dB.\
+SDRc improvement is -6.012 dB.\
+\
+SDR of the clipped signal: 14.999 dB.\
+SDR of the restored signal: 9.137 dB.\
+SDR improvement is -5.862 dB.\
+}
