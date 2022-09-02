@@ -1,7 +1,7 @@
 import numpy as np
 import scipy as sp
 from omp import OMP
-from helpers import next_multiple, hardclip
+from helpers import next_multiple, hardclip, get_fejer_threshold
 
 def invoke_OMP(audio, params):
     '''
@@ -31,8 +31,8 @@ def invoke_OMP(audio, params):
         raise ValueError('Modo del algoritmo (\'lfcomp\',\'omp\') no especificado.')
     if 'analog_clipping' not in params:
         raise ValueError('Recorte analógico no especificado.')
-    if 'fejer_threshold' not in params:
-        raise ValueError('Umbral de recorte brindado por promediado de Fejer no especificado.')
+    # if 'fejer_threshold' not in params:
+    #     raise ValueError('Umbral de recorte brindado por promediado de Fejer no especificado.')
     if 'epsilon' not in params:
         raise ValueError('Error tolerable (\'epsilon\') no especificado.')
     if 'K_omp' not in params:
@@ -49,9 +49,23 @@ def invoke_OMP(audio, params):
     skip_clean_frames = params['skip_clean_frames']
     analog_clipping = params['analog_clipping']
     verbose = params['verbose']
-    fejer_threshold = params['fejer_threshold']
     epsilon = params['epsilon']
     K_omp = params['K_omp']
+
+    if analog_clipping:
+        print('Modo de recorte analógico.')
+        # If the context is analog clipping, Fejer averaging is employed to estimate the clipping threshold    
+        if 'fejer_threshold' not in params:
+            print('\nUmbral de recorte no detectado. Calculando por medio del promediado de Fejér...')
+            CLIP_LEVEL = get_fejer_threshold(audio)[0]
+        else:
+            CLIP_LEVEL = params['fejer_threshold']
+        # Since the clipping contains oscillations, the input audio signal is hardclipped using the threshold obtained by the fejér averaging.
+        audio = hardclip(audio, CLIP_LEVEL)[0]
+    else:
+        print('Modo de recorte digital.')
+        # If the context is digital clipping, the clipping level is obtained from considering the infinity norm (defined by the maximum amplitude level) of the audio vector. 
+        CLIP_LEVEL = np.max(audio)
 
     # An iterator object is obtained from the frame's length
     N_support = np.arange(N)
@@ -60,15 +74,6 @@ def invoke_OMP(audio, params):
     oL = audio.size # Original length
     L = next_multiple(oL, N) # New padded vector length
     audio = np.pad(audio, (0, L - oL))
-
-    if analog_clipping:
-        # If the context is analog clipping, Fejer averaging is employed to estimate the clipping threshold    
-        CLIP_LEVEL = fejer_threshold
-        # Since the saturation does not have constant amplitude, the input audio signal is hardclipped.
-        audio = hardclip(audio, CLIP_LEVEL)[0]
-    else:
-        # If the context is digital clipping, the clipping level is obtained from considering the infinity norm (defined by the maximum amplitude level) of the audio vector. 
-        CLIP_LEVEL = np.max(audio)
     
     # We assign a different value to the frequency bins K variable depending on what dictionary we are working on.
     if dictionary =='C':
@@ -149,7 +154,7 @@ def invoke_OMP(audio, params):
 
             if y_r.size == y.size and skip_clean_frames: # no clipped samples
                 continue
-            if verbose > 0: print(f'Frame {i}/{frames-1}')
+            if verbose > 0: print(f'Segmento {i}/{frames-1}')
 
             # if analog_clipping:
             #     I_mp, I_mn = np.where(y >= CLIP_LEVEL)[0], np.where(y <= - CLIP_LEVEL)[0]
