@@ -7,4 +7,4 @@ This procedure, coined Low Frequency Constrained Orthogonal Matching Pursuit (LF
 
 The results state a positive linear correlation between both algorithms after studying the relevant metrics obtained from restoring aliasing-free clipped signals with LFC-OMP and digitally clipped signals with C-OMP. Also, the absolute differences between each of these metrics are insignicant. These results imply that LFC-OMP can be used to restore clipped aliasing-free signals, in the same way that C-OMP is used to restore signals which were clipped in the digital domain.
 
-omp.py contains the code for the algorithm, with comments explaining each line.
+invoke.py provides an script with both the call for the clipping threshold estimation method and the OMP algorithm while omp.py contains the code for the OMP algorithm, with comments explaining each line.
