@@ -1,7 +1,9 @@
 
 # Low Frequency Constrained Orthogonal Matching Pursuit
 
-Code repository for my thesis "Restauración de señales de audio digitales recortadas con aliasing reducido". The proposed algorithm restores aliasing-free clipped signals (e.g. those coming from a recording studio). The solution arises in terms of a successive approximation method based on the sparse signals framework. Signal restitution in the presented approach is possible due to the clipping threshold estimation's by means of the Fejér's averaging method. 
+Code repository for my thesis "Restauración de señales de audio digitales recortadas con aliasing reducido". The proposed algorithm restores aliasing-free clipped signals (e.g. those coming from a recording studio). 
+
+The solution arises in terms of a successive approximation method based on the sparse signals framework. Signal restitution in the presented approach is possible due to the clipping threshold estimation's by means of the Fejér's averaging method. 
 
 This procedure, coined Low Frequency Constrained Orthogonal Matching Pursuit (LFC-OMP), is a variation of the traditional algorithm Constrained Orthogonal Matching Pursuit or C-OMP to the use case of the aliasing-free clipped signals.
 
