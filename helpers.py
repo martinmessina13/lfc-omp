@@ -59,7 +59,7 @@ def clip_SDR(audio, desiredSDR):
     eps = np.finfo(np.float64).eps
 
     # we want to minimize the difference between the desired SDR and a function used to obtain SDR dependent of variable audio, namely the clipping threshold
-    diffSDR = lambda audio: SDR(audio, hardclip(audio, audio)[0]) - desiredSDR
+    diffSDR = lambda x: SDR(audio, hardclip(audio, x)[0]) - desiredSDR
 
     # # unpacking solution audio, and diffSDR value in solution f(audio)
     eps = np.finfo(np.float64).eps
